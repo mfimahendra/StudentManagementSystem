@@ -22,11 +22,11 @@
                             <fieldset>
                                 <div class="form-group">
                                     <i class='bx bx-user'></i>
-                                    <input class="form-control" placeholder="Username" name="username" type="text" autofocus>
+                                    <input class="form-control" placeholder="Username" name="username" type="text" autofocus required>
                                 </div>
                                 <div class="form-group mt-2">
                                     <i class='bx bxs-lock-alt'></i>
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" required>
                                 </div>                                                                
                                 <div class="checkbox remember-me mt-2">
                                     <label>

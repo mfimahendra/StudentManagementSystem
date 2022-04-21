@@ -1,7 +1,6 @@
 package com.nuistindo.sms.servlet;
 
 import com.nuistindo.sms.dao.AdminDAO;
-import com.nuistindo.sms.dao.AdminDAOImpl;
 import com.nuistindo.sms.model.Admin;
 
 import javax.servlet.*;
@@ -9,7 +8,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.*;
+import java.sql.*;
 
 @WebServlet(name = "AdminServlet", value = "/Admin")
 public class AdminServlet extends HttpServlet {
@@ -26,10 +25,19 @@ public class AdminServlet extends HttpServlet {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
 
-            out.println(username + " " + password);
+            com.nuistindo.sms.service.AdminDAO adminDAO = new AdminDAO();
+            Admin admin = adminDAO.logAdmin(username, password);
+            if (admin != null) {
+                HttpSession session = request.getSession();
+                session.setAttribute("LoggedAdmin", admin);
+                response.sendRedirect("view/admin/dashboard.jsp");
+            } else {
+                out.println("unknown Credentials");
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
-
-
 
     }
 }

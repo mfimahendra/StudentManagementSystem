@@ -4,7 +4,7 @@ import javax.print.DocFlavor;
 
 public interface Constant {
 
-    interface state {
+    interface State {
         String SUCCESS = "success";
         String FAIL = "fail";
         String WRONG = "wrong";
@@ -12,8 +12,8 @@ public interface Constant {
     }
 
     interface Item {
-        String username = "username";
-        String password = "password";
+        String USERNAME = "username";
+        String PASSWORD = "password";
     }
 
     interface Operation {
