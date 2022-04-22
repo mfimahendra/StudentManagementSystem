@@ -18,7 +18,7 @@
                         <h3 class="panel-title">Login</h3>
                     </div>                    
                     <div class="panel-body mt-2">
-                        <form role="form" action="Admin" method="post">
+                        <form role="form" action="Login" method="post">
                             <fieldset>
                                 <div class="form-group">
                                     <i class='bx bx-user'></i>

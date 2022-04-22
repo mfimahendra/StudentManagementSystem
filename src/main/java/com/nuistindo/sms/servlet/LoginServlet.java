@@ -10,12 +10,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
-@WebServlet(name = "AdminServlet", value = "/Admin")
-public class AdminServlet extends HttpServlet {
+@WebServlet(name = "LoginServlet", value = "/Login")
+public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        HttpSession session = request.getSession();
+        Admin admin = (Admin) session.getAttribute("LoggedAdmin");
+        response.sendRedirect("/view/admin/dashboard.jsp");
     }
 
     @Override
@@ -30,7 +32,7 @@ public class AdminServlet extends HttpServlet {
             if (admin != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("LoggedAdmin", admin);
-                response.sendRedirect("view/admin/dashboard.jsp");
+                response.sendRedirect("/view/admin/dashboard.jsp");
             } else {
                 out.println("unknown Credentials");
             }

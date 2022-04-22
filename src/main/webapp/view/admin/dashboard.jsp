@@ -3,7 +3,7 @@
 <%
     Admin admin = (Admin) session.getAttribute("LoggedAdmin");
     if (admin == null) {
-        response.sendRedirect("../../index.jsp");
+        response.sendRedirect("/");
     }
 %>
 <!DOCTYPE html>
@@ -13,5 +13,8 @@
 </head>
 <body>
   <h1>Admin System</h1>
+  <form action="logout" method="post">
+    <input type="submit" value="Logout">
+  </form>
 </body>
 </html>
