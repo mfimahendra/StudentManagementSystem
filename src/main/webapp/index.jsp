@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <jsp:include page="view/layout/head.jsp"/>
+        <jsp:include page="WEB-INF/view/layout/head.jsp"/>
         <link rel="stylesheet" type="text/css" href="public/css/style.css">
         <title>Login!</title>                    
     </head>
     <body>        
-        <jsp:include page="view/login/loginModal.jsp" />
+        <jsp:include page="WEB-INF/view/login/loginModal.jsp" />
     </body>
 </html>

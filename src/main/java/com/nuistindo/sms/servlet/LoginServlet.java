@@ -15,9 +15,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        Admin admin = (Admin) session.getAttribute("LoggedAdmin");
-        response.sendRedirect("/view/admin/dashboard.jsp");
+
     }
 
     @Override
@@ -32,7 +30,7 @@ public class LoginServlet extends HttpServlet {
             if (admin != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("LoggedAdmin", admin);
-                response.sendRedirect("/view/admin/dashboard.jsp");
+                response.sendRedirect("/Admin/Dashboard");
             } else {
                 out.println("unknown Credentials");
             }

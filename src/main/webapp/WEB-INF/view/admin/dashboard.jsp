@@ -2,9 +2,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     Admin admin = (Admin) session.getAttribute("LoggedAdmin");
-    if (admin == null) {
-        response.sendRedirect("/");
-    }
+//    if (admin == null) {
+//        response.sendRedirect("/");
+//    }
 %>
 <!DOCTYPE html>
 <html>
